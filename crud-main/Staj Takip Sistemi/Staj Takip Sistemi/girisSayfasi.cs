@@ -13,13 +13,15 @@ namespace Staj_Takip_Sistemi
 {
     public partial class girisSayfasi : Form
     {
-        SqlConnection con;
-        SqlCommand cmd;
-        SqlDataReader dr;
-        SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-RJFLT08;Initial Catalog=""Staj Takip Sistemi"";Integrated Security=True");
+       
         public girisSayfasi()
         {
             InitializeComponent();
+
+            SqlConnection con;
+            SqlCommand cmd;
+            SqlDataReader dr;
+            SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-RJFLT08;Initial Catalog=""Staj Takip Sistemi"";Integrated Security=True");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,6 +54,25 @@ namespace Staj_Takip_Sistemi
         private void minimizeBtn_MouseHover(object sender, EventArgs e)
         {
             toolTip1.SetToolTip(minimizeBtn, "Küçült");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adminBtn_Click(object sender, EventArgs e)
+        {
+            adminGiris agiris = new adminGiris();                //Formlar arası geçiş kodu
+            agiris.Show();     
+            this.Hide();
+        }
+
+        private void yoneticiBtn_Click(object sender, EventArgs e)
+        {
+            yoneticiGiris bgiris = new yoneticiGiris();                //Formlar arası geçiş kodu
+            bgiris.Show();
+            this.Hide();
         }
     }
 }
